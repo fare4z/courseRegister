@@ -7,7 +7,6 @@ if (isset($_POST['btnLogin'])) {
 
     // check user
     // $sql = "SELECT * from tblUser where username='$username' and password='$password' and isActive=1";
-    // $sql = "SELECT * from tblUser where username='$username' and password='$password' and isActive=1";
 
     // $result = mysqli_query($conn, $sql);
     // $row = mysqli_fetch_assoc($result);
@@ -21,9 +20,8 @@ if (isset($_POST['btnLogin'])) {
     $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($result);
     mysqli_stmt_close($stmt);
-
-    mysqli_stmt_close($stmt);
-
+    
+    // End Prepared Statement
 
     if ($row['username']) {
         $_SESSION['_flash'] = ['type' => 'success', 'msg' => 'Login Successfully'];
@@ -33,14 +31,9 @@ if (isset($_POST['btnLogin'])) {
         $_SESSION['isLoggedin'] = 1;
         $_SESSION['ss_fullname'] = $row['fullname'];
         $_SESSION['ss_id'] = $row['id'];
-        $_SESSION['isLoggedin'] = 1;
-        $_SESSION['ss_fullname'] = $row['fullname'];
-        $_SESSION['ss_id'] = $row['id'];
-
-        header("Location: list.php");
+    
         header("Location: list.php");
     } else {
-        $_SESSION['_flash'] = ['type' => 'error', 'msg' => 'Login Fail, Please try again'];
         $_SESSION['_flash'] = ['type' => 'error', 'msg' => 'Login Fail, Please try again'];
         header("Location: index.php");
     }
