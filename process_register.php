@@ -41,13 +41,13 @@ if (isset($_POST['submit'])) {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'fareez.psp@gmail.com'; //GMAIL USERNAME
-            $mail->Password   = 'athvqngwznjgltpg';    //GMAIL APP PASSWORD
+            $mail->Username   = 'email@gmail.com'; //alamat email gmail
+            $mail->Password   = 'secret';    // app password yang telah dibuat
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
             //Recipients
-            $mail->setFrom('fareez.psp@gmail.com', 'Admin Sistem');
+            $mail->setFrom('email@gmail.com', 'Admin Sistem'); // alamat email gmail 
 
             $mail->addAddress($email, $fullname); //("to email", "to name")
 
