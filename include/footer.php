@@ -23,9 +23,9 @@ if (isset($_SESSION['_flash'])) { ?>
 </script>
 <?php 
 unset($_SESSION['_flash']);
-} ?>
+} 
+?>
 
-<script>
     
 </body>
 

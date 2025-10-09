@@ -1,7 +1,7 @@
    <?php
    // Header
    include_once "include/db_connect.php";
-     include_once "include/header.php";
+   include_once "include/header.php";
    ?>
 
    <!-- Start Content -->
@@ -22,6 +22,11 @@
       <div class="mb-3">
          <label class="form-label">Fullname</label>
          <input type="text" class="form-control" name="fullname" placeholder="Enter Your Fullname" required>
+      </div>
+
+      <div class="mb-3">
+         <label class="form-label">Email</label>
+         <input type="email" class="form-control" name="email" placeholder="Enter Your Email" required>
       </div>
 
       <div class="mb-3">

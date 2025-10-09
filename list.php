@@ -2,6 +2,7 @@
 // Header
   include_once "include/db_connect.php";
      include_once "include/header.php";
+include "include/auth_check.php";
 ?>
 
 <!-- Start Content -->
@@ -23,8 +24,8 @@
         while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr> 
             <td><?php echo $row['id'];?></td>
-            <td><?php echo $row['username'];?></td>
-            <td><?php echo $row['fullname'];?></td>
+            <td><?php echo htmlspecialchars($row['username']);?></td>
+            <td><?php echo htmlspecialchars($row['fullname']);?></td>
             <td><?php echo $row['isActive'] ? 'Active' : 'Inactive';?></td>
             <td>
                 <a href="update.php" class="btn btn-primary"> Update </a> &nbsp; 

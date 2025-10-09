@@ -36,7 +36,7 @@
 
         <nav class="navbar navbar-expand-lg bg-body-secondary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">My PHP Task</a>
+                <a class="navbar-brand" href="index.php">My PHP Task</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -48,11 +48,17 @@
                             <a class="nav-link" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Menu 1</a>
+                            <a class="nav-link" href="register.php">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Menu 2</a>
+                            <a class="nav-link" href="list.php">List Users</a>
                         </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Logout</a>
+                        </li>
+
+
                     </ul>
                 </div>
                 <?php

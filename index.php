@@ -2,6 +2,12 @@
    // Header
    include_once "include/db_connect.php";
    include_once "include/header.php";
+
+   // Kalau dah login, redirect ke list.php.
+   if (isset($_SESSION['isLoggedin'])) {
+      header("Location: list.php");
+   }
+
    ?>
 
    <!-- Start Content -->
