@@ -18,6 +18,8 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $isActive = 1;
 
+    $password2 = password_hash($password, PASSWORD_DEFAULT);
+
     // Check if username already exists. If exists, redirect back to register page with error message. Else, proceed to insert data.
 
     $checkUser = mysqli_query($conn, "SELECT username from tblUser where username='$username'");
@@ -30,7 +32,7 @@ if (isset($_POST['submit'])) {
     }
 
     // Insert data ke dalam database
-    $sql = "INSERT INTO tblUser (username, fullname, password, dob, isActive, email)  VALUES ('$username' , '$fullname' , '$password', '$dob' , '$isActive' , '$email')";
+    $sql = "INSERT INTO tblUser (username, fullname, password, dob, isActive, email)  VALUES ('$username' , '$fullname' , '$password2', '$dob' , '$isActive' , '$email')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Success Insert data";

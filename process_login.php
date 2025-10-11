@@ -12,10 +12,10 @@ if (isset($_POST['btnLogin'])) {
     // $row = mysqli_fetch_assoc($result);
 
     // Prepared Statement - Prevent SQL Injection
-    $sql = "SELECT * FROM tblUser WHERE username = ? AND password = ? AND isActive = 1";
+    $sql = "SELECT * FROM tblUser WHERE username = ? AND isActive = 1";
 
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+    mysqli_stmt_bind_param($stmt, "s", $username);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($result);
@@ -23,7 +23,7 @@ if (isset($_POST['btnLogin'])) {
     
     // End Prepared Statement
 
-    if ($row['username']) {
+    if (password_verify($password , $row['password'])) {
         $_SESSION['_flash'] = ['type' => 'success', 'msg' => 'Login Successfully'];
 
         // Simpan session login
