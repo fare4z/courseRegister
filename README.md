@@ -99,12 +99,12 @@ Pastikan anda mempunyai table `tblUser` dengan struktur berikut:
   - Relationship management antara entities
 
 ### Lain-lain yang boleh ditambah
-- [ ] Password hashing dan security
+- [/] Password hashing dan security
 - [ ] User role management (Admin, User)
 - [ ] Search dan filtering dalam senarai pengguna
 - [ ] Pagination untuk senarai yang panjang
-- [ ] Upload profile picture
-- [ ] Email verification untuk pendaftaran
+- [/] Upload profile picture
+- [/] Email verification untuk pendaftaran
 - [ ] Password reset functionality
 - [ ] Activity logs dan audit trail
 
