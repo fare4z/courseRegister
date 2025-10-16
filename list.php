@@ -24,7 +24,9 @@ include "include/auth_check.php";
         while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr> 
             <td><?php echo $row['id'];?></td>
-            <td><?php echo htmlspecialchars($row['username']);?></td>
+    <td><a href="profile.php?id=<?php echo $row['username'];?>"> <?php echo htmlspecialchars($row['username']);?></a></td>
+
+    
             <td><?php echo htmlspecialchars($row['fullname']);?></td>
             <td><?php echo $row['isActive'] ? '<span class="badge text-bg-primary">Active</span>' : '<span class="badge text-bg-danger">In-Active</span>';?></td>
             <td>
